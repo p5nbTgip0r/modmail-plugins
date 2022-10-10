@@ -122,5 +122,5 @@ class ReactOnRole(commands.Cog):
             await message.add_reaction(emote)
 
 
-def setup(bot):
-    bot.add_cog(ReactOnRole(bot))
+async def setup(bot):
+    await bot.add_cog(ReactOnRole(bot))
