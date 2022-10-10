@@ -42,7 +42,7 @@ class ReactOnRole(commands.Cog):
             print("Could not get introduction channel. Make sure it is set")
             return None
         channel = member.guild.get_channel(channel)
-        last_message: discord.Message = await channel.history(limit=200).get(author__id=member.id)
+        last_message: discord.Message = await discord.utils.get(channel.history(limit=200), author__id=member.id)
         return last_message
 
     @checks.has_permissions(PermissionLevel.MODERATOR)
